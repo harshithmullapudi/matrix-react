@@ -89,6 +89,7 @@ module.exports = createReactClass({
             return;
         }
         MatrixClientPeg.get().getThirdpartyProtocols().then((response) => {
+            console.log(response)
             this.protocols = response;
             this.setState({protocolsLoading: false});
         }, (err) => {

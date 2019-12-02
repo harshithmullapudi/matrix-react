@@ -178,7 +178,7 @@ export default class NetworkDropdown extends React.Component {
             }
         }
 
-        return options;
+        return [];
     }
 
     _makeMenuOption(server, instance, includeAll, handleClicks) {
@@ -193,8 +193,8 @@ export default class NetworkDropdown extends React.Component {
             name = server;
         } else if (!instance) {
             key = server + '_all';
-            name = 'Matrix';
-            icon = <img src={require("../../../../res/img/network-matrix.svg")} />;
+            name = 'EventBeep';
+            icon = <img src="https://eventbeep.com/images/logo.svg" />;
         } else {
             key = server + '_inst_' + instance.instance_id;
             const imgUrl = instance.icon ?
@@ -223,7 +223,7 @@ export default class NetworkDropdown extends React.Component {
             </div>;
             currentValue = <input type="text" className="mx_NetworkDropdown_networkoption"
                 ref={this.collectInputTextBox} onKeyUp={this.onInputKeyUp}
-                placeholder="matrix.org" // 'matrix.org' as an example of an HS name
+                placeholder="EventBeep" // 'matrix.org' as an example of an HS name
             />;
         } else {
             const instance = instanceForInstanceId(this.props.protocols, this.state.selectedInstanceId);
